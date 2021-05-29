@@ -1,6 +1,6 @@
 %\documentclass[smallroyalvopaper,twoside,12pt]{memoir}  % stocksize 9.25 by 6.175 in
 \documentclass[a4paper,twoside,12pt]{memoir}  % stocksize A4
-\usepackage{lipsum}
+\usepackage{lipsum,amsmath,systeme}
 %\usepackage{showframe}
 \settrimmedsize{9in}{6in}{*} % final page size after trimming
 \setulmarginsandblock{1in}{1in}{*} % upper and lower margins defining typeblock height
@@ -45,7 +45,7 @@ Examples:
 \item $x + 2 = 4$ is a linear equation.
 \item $x^2 + 2 = 4$ is not a linear equation.
 \item $x + y + z = 3$ is a linear equation.
-\item $x + y^1.1 + z = 3$ is not a linear equation.
+\item $x + y^{1.1} + z = 3$ is not a linear equation.
 \end{list}
 
 There's one more thing that can cause an equation to be non-linear: if it contains a non-linear function, then the equation will also be non-linear. Consider the sine function:
@@ -53,6 +53,24 @@ There's one more thing that can cause an equation to be non-linear: if it contai
 %TODO insert graph of a sine function with an arrow show that it's not straight
 
 That's not straight at all! Therefore, an equation like $5 \sin(x) = 5$ is non-linear.
+
+Now, it may seem like there's no fun in linear algebra -- you probably already know how to solve an equation like $x + 2 = 4$, so where's the challenge?
+In linear algebra, so solve \textit{multiple equations at once}.
+
+For example, if I told you ``the sum of two numbers is 5, and their difference is 1, what are the numbers?'' you would want to be able to determine that the numbers are $3$ and $2$.
+
+I could write that same problem as
+\begin{equation*}
+  \systeme{
+    x + y = 5,
+    x - y = 1
+    }
+\end{equation*}
+We would say that $x = 3, y = 2$ \textit{solves the system} since it works for both of the equations.
+(The little thing to the left of the equation is called a ``curly brace'' and is used to indicated that both of the equations are grouped together into a system.)
+
+In the remainder of this chapter, we'll be learning how to solve linear systems of any size.
+Then we'll go on to see what shapes linear systems represent, and some really cool and mysterious tie-ins with the rest of mathematics.
 
 \subsection{Exercises}
 Which of the following are linear equations?
@@ -65,5 +83,11 @@ Which of the following are linear equations?
 \item 6) $x^2 + y = 2$
 \item 7) $5x + \cos(x) = 10$
 \end{list}
+
+\section{History of Linear Algebra}
+%TODO
+
+\section{Adding Equations Together}
+Before we jump into 
 
 \end{document}
