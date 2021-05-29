@@ -1,0 +1,18 @@
+%\documentclass[smallroyalvopaper,twoside,12pt]{memoir}  % stocksize 9.25 by 6.175 in
+\documentclass[a4paper,twoside,12pt]{memoir}  % stocksize A4
+\usepackage{lipsum}
+%\usepackage{showframe}
+\settrimmedsize{9in}{6in}{*} % final page size after trimming
+\setulmarginsandblock{1in}{1in}{*} % upper and lower margins defining typeblock height
+% according to KDP width of typeblock no more than 5.375in 
+% about 65 characters per line is good for reading. For many 12pt fonts
+% this gives a line length of about 2.5 alphabet lengths as about 5.2in.
+% For 10pt fonts the line length is about 4.5in. Lets say the line length
+% is to be 5in which calls for a 0.625in outer margin.
+\setlrmarginsandblock{0.375in}{0.625in}{*}
+
+\checkandfixthelayout
+
+\begin{document}
+\lipsum[1-5]
+\end{document}
