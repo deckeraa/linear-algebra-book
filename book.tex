@@ -125,7 +125,103 @@ Examples:
 \begin{list}{}
 \item 5) $x + y^2 = 5$
 \item 6) $x - y  + z= 2$
+\end{list}
 
+\section{Systems and Solutions}
+A few pages ago we saw the following system of equations:
+\begin{equation*}
+  \systeme{
+    x + y = 5,
+    x - y = 1
+    }
+\end{equation*}
+
+A \textit{system} of equations is simply a group of equations where we'd like to find values for our variables that work for all of the equations in the system.
+
+For example, $x=4, y=1$ works as a solution for $x+y=5$, since $4+1=5$, but it does not work as a solution for $x-y=1$, since $1-4 = -3 \neq 1$. Likewise, $x=100, y=99$ works as a solution for $x-y=1$, but not for $x+y=5$. However, $x=3,y=2$ works in both equations, so we say that $x=3, y=2$ is a solution of the system.
+
+Sometimes in math we get fancy and say that $x=3, y=2$ is in the \textit{solution set} of the system.
+That's just a fun way of saying that it's a solution to the system\footnote{Why say that there's a solution set? Because some systems have more than one solution.}.
+Sometimes we also write the solution as an ordered pair, or as a point in space, so $x=3, y =2$ can be written as $(3,2)$.
+
+Example:
+Is $x=1, y =2$ in the solution set of the following system?
+\begin{equation*}
+  \systeme{
+    x + 2y = 5,
+    2x - y = 0
+  }
+\end{equation*}
+
+Answer: Yes, because it satifies both equations. $1 + 2(2) = 5$, and $2(1) - 2 = 0$.
+
+Example:
+Is $x = 1, y = 2$ in the solution set of the following system?
+\begin{equation*}
+  \systeme{
+    x + 2y = 5,
+    2x - y = 0,
+         0 = 1
+  }
+\end{equation*}
+
+Answer: No, because it doesn't satisfy the equation $0=1$. In fact, no values of $x$ or $y$ can satisfy $0=1$, so this system has no solutions.
+
+Example:
+Is $x = 2$ in the solution set of the following system?
+\begin{equation*}
+  \systeme{
+    2x = 4,
+    3x = 10
+  }
+\end{equation*}
+
+Answer. No, because $x=2$ doesn't satisfy the equestion $3x=10$, since $3(2) = 6 \neq 10$.
+
+\subsection{Exercises}
+\subsubsection{Which of the following is a solution to}
+\begin{equation*}
+  \systeme{
+    2x + 2y = 5,
+    x  - 2y = 4
+  }
+\end{equation*}
+
+\begin{list}{}
+\item 1) (1,2)
+\item 2) (3, -1/2)
+\end{list}
+
+\subsubsection{Which of the following is a solution to}
+\begin{equation*}
+  \systeme{
+    2x + 2y = 5,
+          0 = 2
+  }
+\end{equation*}
+
+\begin{list}{}
+\item 3) (4,5)
+\item 4) (6,8)
+\item 5) \ldots\ does this system have any solutions?
+\end{list}
+
+\subsubsection{Which of the following is a solution to}
+\begin{equation*}
+  \systeme{
+    x +  y = 3,
+    2x + 2y = 6
+  }
+\end{equation*}
+
+\begin{list}{}
+\item 6) (1,2)
+\item 7) (0,3)
+\item 8) (2,1)
+\item 9) (4,-1)
+\item 10) \ldots\ how many solutions do you think this system has?
+\item 11) (1,1,)
+\item 12) \ldots\ is every point a solution to this system?
 \end{list}
 
 \end{document}
