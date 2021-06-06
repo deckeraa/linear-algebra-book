@@ -1,6 +1,8 @@
 %\documentclass[smallroyalvopaper,twoside,12pt]{memoir}  % stocksize 9.25 by 6.175 in
 \documentclass[a4paper,twoside,12pt]{memoir}  % stocksize A4
 \usepackage{lipsum,amsmath,systeme}
+\usepackage{graphicx}
+\usepackage{mathtools}
 %\usepackage{showframe}
 \settrimmedsize{9in}{6in}{*} % final page size after trimming
 \setulmarginsandblock{1in}{1in}{*} % upper and lower margins defining typeblock height
@@ -31,6 +33,7 @@ When there is more than one variable, we can draw pretty graphs.
 Compare what these two graphs look like: (remember, the graph of an equation is just all the points that satisfy the equation)
 
 % TODO put a cute graph of y = 2x + 1 with y = x^2 + 1
+\includegraphics[width=\linewidth]{linear-vs-nonlinear.eps}
 
 There's a difference between these two equations -- one is a straight line, the other is curvy.
 (To be precise, $y = x^2 + 1$ is a parabola).
@@ -223,5 +226,108 @@ Answer. No, because $x=2$ doesn't satisfy the equestion $3x=10$, since $3(2) = 6
 \item 11) (1,1,)
 \item 12) \ldots\ is every point a solution to this system?
 \end{list}
+
+\section{Equivalence}
+Sometimes different systems of equations have identical solution sets -- that is, all of the solutions for one system work for the other, and vice versa. In this section we'll examine three ways that you can produce equivalent systems. (We'll build on this in future sections to produce an equivalent system that makes it easy to read off the solutions of the system).
+
+\subsection{Swapping Rows}
+Take a look at these two systems:
+\begin{equation*}
+  \systeme{
+    x + 2y = 5,
+    2x - y = 0
+  }
+\end{equation*}
+and
+\begin{equation*}
+  \systeme{
+    2x - y = 0,
+    x + 2y = 5
+  }
+\end{equation*}
+
+They are equivalent since they have the same set of solutions: the point (1,2).
+Notice how the second system is just the first system, but with the rows swapped around.
+\textbf{Anytime two rows are swapped around, the resulting system will be equivalent to the first.}
+
+\subsection{Scaling a row by a non-zero scalar}
+Consider the following two systems:
+\begin{equation*}
+  \systeme{
+    x + 2y = 5,
+    2x - y = 0
+  }
+\end{equation*}
+and
+\begin{equation*}
+  \systeme{
+    2x + 4y = 10,
+    2x - y = 0
+  }
+\end{equation*}
+
+These systems are equivalent since they have the same set of solutions: the point (1,2).
+The difference between then is that the first row was multiplied by 2: $2(x+2y)=2*5 \rightarrow 2x + 4y = 10$.
+
+This is called a \textit{scaling operation} because the row is scaled up by a certain factor, in this case two.
+The number it is scaled by is called a \textit{scalar}. In this example, the scalar is two.
+
+\textbf{If we take a system and scale a row by a \textbf{non-zero} scalar, the resulting system will always be equivalent to the first.}
+
+Why does the scalar have to be non-zero? Otherwise we could just multiply all rows by 0 to get
+\begin{equation*}
+  \systeme{
+    0 = 0,
+    0 = 0
+  }
+\end{equation*}
+which gives us a different solution set, because all values of $x$ and $y$ satisfy the system.
+
+\subsection{Adding rows together}
+Consider the following system:
+\begin{equation*}
+  \systeme{
+     x + y = 5,
+    -x + y = 1
+  }
+\end{equation*}
+
+This is equivalent to the system created by taking row two and adding row one to it:
+\begin{equation*}
+  \systeme{
+     x +  y = 5,
+    0x + 2y = 6
+  }
+\end{equation*}
+
+Notice then that rescaling row two by dividng by 2 gives $0x + 2y = 6 \rightarrow y = 3$, and we're most of the way done with solving the system.
+
+\subsection{Writing down what we're doing}
+It's useful to be able to write down which rows we're adding together so that it's easy for someone else to follow
+our work.
+To do this we're going to use some really cute notation.
+There's a greek letter $\rho$ (usually spelled like ``rho'') that's pronounced ``row''.
+When we want to refer to a specific row in the system we subscript $\rho$ with the line number.
+So row one is written as $\rho_1$, row two is written as $\rho_2$, and so on.
+When you read these out loud, just pronounce it like ``row one'', ``row two'', and so on.
+
+Row? Rho? I told you it was cute. Whoever thought up using that greek letter in particular probably felt pretty clever.
+
+Anyhow, we can write down how we are adding rows by writing above an arrow between the systems:
+
+\begin{equation*}
+  \systeme{
+     x + y = 5,
+    -x + y = 1
+  }
+  \xrightarrow{\rho_2 = \rho_2 + \rho_1}
+  \systeme{
+     x +  y = 5,
+    0x + 2y = 6
+  }
+\end{equation*}
+
+
+
 
 \end{document}
