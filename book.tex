@@ -327,6 +327,81 @@ Anyhow, we can write down how we are adding rows by writing above an arrow betwe
   }
 \end{equation*}
 
+\subsection{Examples}
+\subsubsection{Complete the following row operation:}
+\begin{equation*}
+  \systeme{
+     2x + y = 6,
+    -2x + y = -2
+  }
+  \xrightarrow{\rho_2 = \rho_2 + \rho_1}
+\end{equation*}
+
+Answer:
+\begin{equation*}
+  \systeme{
+    2x +  y = 6,
+    0x + 2y = 4
+  }
+\end{equation*}
+
+\subsubsection{Complete the following row operation:}
+\begin{equation*}
+  \systeme{
+     2x + y = 4,
+      x + y = 3
+  }
+  \xrightarrow{\rho_2 = \rho_2 - \rho_1}
+\end{equation*}
+
+Answer:
+For doing this math, I find it easiest to turn it into addition:
+\begin{align*}
+  x  +  y &=  3 \\
+  -2x + -y &= -4
+\end{align*}
+
+\begin{equation*}
+  \systeme{
+     2x + y = 4,
+      x + y = 3
+  }
+  \xrightarrow{\rho_2 = \rho_2 - \rho_1}
+  \systeme{
+     2x + y = 4,
+     -x     = -1
+  }
+\end{equation*}
+
+(Notice that if a variable is getting multiplied by 0, we can skip writing the variable, like $y$ in row two of the system above.)
+
+\subsubsection{Complete the following row operation:}
+\begin{equation*}
+  \systeme{
+    x + y + z = 3,
+   -x + y + z = 1,
+   -x - y + z = -1
+  }
+  \xrightarrow[\rho_3 = \rho_3 + \rho_1]{\rho_2 = \rho_2 + \rho_1}
+\end{equation*}
+
+Answer:
+\begin{equation*}
+  \systeme{
+    x + y + z = 3,
+   -x + y + z = 1,
+   -x - y + z = -1
+  }
+  \xrightarrow[\rho_3 = \rho_3 + \rho_1]{\rho_2 = \rho_2 + \rho_1}
+  \systeme{
+    x + y + z = 3,
+       2y +2z = 4,
+           2z = 2
+  }
+\end{equation*}
+
+\subsection{Exercises}
+
 
 
 
