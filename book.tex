@@ -32,7 +32,6 @@ to solve the equation $x + y = 6$. (There's many solutions to this: 0 and 6, 1 a
 When there is more than one variable, we can draw pretty graphs.
 Compare what these two graphs look like: (remember, the graph of an equation is just all the points that satisfy the equation)
 
-% TODO put a cute graph of y = 2x + 1 with y = x^2 + 1
 \includegraphics[width=\linewidth]{linear-vs-nonlinear.eps}
 
 There's a difference between these two equations -- one is a straight line, the other is curvy.
@@ -53,7 +52,7 @@ Examples:
 
 There's one more thing that can cause an equation to be non-linear: if it contains a non-linear function, then the equation will also be non-linear. Consider the sine function:
 
-%TODO insert graph of a sine function with an arrow show that it's not straight
+\includegraphics[height=1.5in]{sine_isnt_linear.eps}
 
 That's not straight at all! Therefore, an equation like $5 \sin(x) = 5$ is non-linear.
 
@@ -447,5 +446,286 @@ Answer:
   \xrightarrow{\rho_2 = \rho_2 + \rho_1}
 \end{equation*}
 (Note: instead of calling the variables $x$ and $y$ we're just using subscripted variables like $a_0$ and $a_1$. It's all the same -- we can name variables whatever we want; we could use emojis if we really wanted.)
+
+\section{Solving Systems Using Gauss's Method}
+Now that we know how to create equivalent systems, we can use that to solve systems.
+To do this, we'll use a technique called Gauss's Method.
+
+The idea behind Gauss's Method is that we take a system that isn't solved, like
+\begin{equation*}
+  \systeme{
+    x + y = 10,
+   -x + y = 4
+  }
+\end{equation*}
+do some row operations (like in the previous section) and get an equivalent system like:
+\begin{equation*}
+  \systeme{
+    x = 3,
+    y = 7
+  }
+\end{equation*}
+
+\subsection{Example 1}
+\begin{equation*}
+  \systeme{
+    x + y = 10,
+   -x + y = 4
+  }
+  \xrightarrow{\rho_2 = \rho_2 + \rho_1}
+  \systeme{
+    x + y = 10,
+       2y = 14
+  }
+\end{equation*}
+First, we eliminated all of the $x$'s below the $x$ in the first row.
+In this case, just adding row 1 to row 2 gets rid of the $x$.
+Next, we will re-scale the bottom row to solve for $y$.
+\begin{equation*}
+  \systeme{
+    x + y = 10,
+       2y = 14
+  }
+  \xrightarrow{\rho_2 = \rho_2/2}
+  \systeme{
+    x + y = 10,
+        y = 7
+  }
+\end{equation*}
+Now, we ``back-substitute'' by eliminating all of the $y$'s above the bottom row.
+\begin{equation*}
+  \systeme{
+    x + y = 10,
+        y = 7
+  }
+  \xrightarrow{\rho_1 = \rho_1 - \rho_2}
+  \systeme{
+    x     = 3,
+        y = 7
+  }
+\end{equation*}
+The equation is now solved! $x=3$, and $y=7$.
+
+\subsection{Example 2}
+Let's do another example.
+Solve: % TODO x = 5, y = 2
+\begin{equation*}
+  \systeme{
+    x + 2y = 9
+  -2x +  y = -8
+  }
+\end{equation*}
+
+Step 1: Eliminate all of the $x$'s below the $x$ in the first row:
+\begin{equation*}
+  \systeme{
+    x + 2y = 9,
+  -2x +  y = -8
+  }
+  \xrightarrow{\rho_2 = \rho_2 + 2*\rho_1}
+  \systeme{
+    x + 2y = 9,
+        5y = 10
+  }
+\end{equation*}
+
+Step 2: Rescale the bottom row to find $y$:
+\begin{equation*}
+  \systeme{
+    x + 2y = 9,
+        5y = 10
+  }
+  \xrightarrow{\rho_2 = \rho_2/5}
+  \systeme{
+    x + 2y = 9,
+         y = 2
+  }
+\end{equation*}
+
+Step 3: Back-substitute:
+\begin{equation*}
+  \systeme{
+    x + 2y = 9,
+         y = 2
+  }
+  \xrightarrow{\rho_1 = \rho_1 - 2\rho_2}
+  \systeme{
+    x      = 5,
+         y = 2
+  }
+\end{equation*}
+
+And now we have our solution: $x=5$, $y=2$.
+
+\subsection{Exercises}
+All of the systems have one solution each and can be solved using the above procedure.
+\subsubsection{1)}
+\begin{equation*} % x = 3, y = -3
+  \systeme{
+    x + y = 0,
+   -x + y = -6
+  }
+\end{equation*}
+
+\subsubsection{2)}
+\begin{equation*} % x = 2, y = 1
+  \systeme{
+    x +  y = 3,
+    x + 2y = 4
+  }
+\end{equation*}
+
+\subsubsection{3)}
+\begin{equation*} % x = 0, y = 4
+  \systeme{
+     x +  y = 4,
+    2x + 3y = 12
+  }
+\end{equation*}
+
+\subsubsection{4)}
+\begin{equation*} % x = -2, y = -3
+  \systeme{
+    2x + 2y = -10,
+    3x + 3y = -15
+  }
+\end{equation*}
+
+\subsubsection{5)}
+\begin{equation*} % x = 1/2, y = 3/2
+  \systeme{
+    x + y = 2,
+    x - y = \frac{-1}{2}
+  }
+\end{equation*}
+
+\section{Solving Systems With Three Variables}
+We can use the same procedure (Gauss's Method) to solved systems of three variables.
+
+\subsection{Example 1}
+\begin{equation*} % x = 3, y = 1, z = 2
+  \systeme{
+     x + y + z = 6,
+    -x + y + z = 0,
+    -x - y + z = -2
+  }
+\end{equation*}
+First, we eliminate the $x$'s below the first row:
+\begin{equation*}
+  \systeme{
+     x + y + z = 6,
+    -x + y + z = 0,
+    -x - y + z = -2
+  }
+  \xrightarrow{\rho_2 = \rho_2 + \rho_1; \rho_3 = \rho_3 + \rho_1}
+  \systeme{
+     x + y + z = 6,
+        2y + 2z = 6,
+             2z = 4
+  }
+\end{equation*}
+
+Notice that the system is now in \textit{echelon form}.
+Echelon form means that the \textit{leading variable} of each row has no variables below it
+(so the $x$ in row 1 has no $x$'s below it, the $y$ in row 2 has now $y$'s benearth it).
+A \textit{leading variable} is the left-most variable in a row that has a non-zero coefficient.
+
+We'll rescale to solve for $z$:
+\begin{equation*}
+  \systeme{
+     x + y + z = 6,
+        2y + 2z = 6,
+             2z = 4
+  }
+  \xrightarrow{\rho_3 = \rho_3/2}
+  \systeme{
+     x + y + z = 6,
+        2y + 2z = 6,
+              z = 2
+  }
+\end{equation*}
+
+Next, we'll back-substitute to clear all $z$'s above the bottom row:
+\begin{equation*}
+  \systeme{
+     x + y + z = 6,
+        2y + 2z = 6,
+              z = 2
+  }
+  \xrightarrow{\rho_1 = \rho_1 -\rho_3; \rho_2 = \rho_2 - 2 \rho_3}
+  \systeme{
+     x + y      = 4,
+        2y      = 2,
+              z = 2
+  }
+\end{equation*}
+
+Now we'll rescale the second row to solve for $y$:
+\begin{equation*}
+  \systeme{
+     x + y      = 4,
+        2y      = 2,
+              z = 2
+  }
+  \xrightarrow{\rho_2 = \rho_2/2}
+  \systeme{
+     x + y      = 4,
+         y      = 1,
+              z = 2
+  }
+\end{equation*}
+
+Finally, we'll back-propogate again to get rid of all the $y$'s above row 2:
+\begin{equation*}
+  \systeme{
+     x + y      = 4,
+         y      = 1,
+              z = 2
+  }
+  \xrightarrow{\rho_1 = \rho_1 - \rho_2}
+  \systeme{
+     x          = 3,
+         y      = 1,
+              z = 2
+  }
+\end{equation*}
+The system has now been solved.
+
+\subsection{Exercises}
+\subsubsection{1)}
+\begin{equation*}
+  \systeme{ % x = 1, y = 2, z = 4
+     x + y + z = 7,
+    -x + y + z = 5,
+    -x - y + z = 1
+  }
+\end{equation*}
+
+\subsubsection{2)}
+\begin{equation*}
+  \systeme{ % x = 2, y = 2, z = 2
+     x + y + z = 6,
+    2x + y + z = 8,
+    3x + 2y + z = 12
+  }
+\end{equation*}
+
+\subsubsection{3)}
+\begin{equation*}
+  \systeme{ % x = -1, y = 1, z = 0
+     x +  y + z = 0,
+    2x +  y + z = -1,
+    4x + 3y - z = -1
+  }
+\end{equation*}
+
+\subsubsection{4)}
+\begin{equation*}
+  \systeme{ % x = 1/2, y = 3/2, z = 5/2
+     x +  y + z = 9/2,
+    2x +  y + z = 5,
+    4x + 3y - z = 4
+  }
+\end{equation*}
 
 \end{document}
