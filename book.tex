@@ -728,4 +728,135 @@ The system has now been solved.
   }
 \end{equation*}
 
+\subsubsection{5)}
+\begin{equation*}
+  \systeme{ % x = -1, y = 2, z = -3
+     x +  y + z = -2,
+     x + 2y + z = 0,
+     x +  y + 2z = -5
+  }
+\end{equation*}
+
+\section{Using Matrix Notation}
+You may have noticed that writing out systems of equations takes a lot of writing.
+We're going to use \textit{matrix notation} to save ourselves some work.
+Matrix notation is just like the notation you've been using, except you don't have to write the variable names.
+Instead of something like:
+\begin{equation*}
+  \systeme{ % x = 1, y = 2
+    x + 2y = 5,
+    x - 2y = -3 
+  }
+\end{equation*}
+we can write:
+\begin{equation*}
+\begin{pmatrix}
+  1 &  2 & 5 \\
+  1 & -2 & -3
+\end{pmatrix}
+\end{equation*}
+Notice that the coefficients (the numbers next to each variable) are the same between the two ways of writing the system.
+If the coefficient isn't present, then the coefficient is assumed to be 1.
+If the variable isn't present, then that means it has a coefficient of zero.
+
+Here's some example of switching between the notations:
+\subsection{Example 1}
+\begin{equation*}
+  \systeme{
+    x + y = 5,
+       2y = 2
+  }
+\end{equation*}
+is transformed to
+\begin{equation*}
+\begin{pmatrix}
+  1 & 1 & 5 \\
+  0 & 2 & 2
+\end{pmatrix}
+\end{equation*}
+
+\subsection{Example 2}
+\begin{equation*}
+\begin{pmatrix}
+  4 & 0 & 4 \\
+  1 & 1 & 5
+\end{pmatrix}
+\end{equation*}
+is transformed to
+\begin{equation*}
+  \systeme{
+    4x     = 4,
+     x + y = 5
+  }
+\end{equation*}
+
+We describe the size of the above matrices by saying that they are 2 x 3 matrices.
+This is pronounced ``2 by 3'' and means that they have two rows and three columns.
+
+\subsection{Example 3}
+What is the size of the following matrix?
+\begin{equation*}
+  \begin{pmatrix}
+    2 & 8 & 3 & 2 & 12 \\
+    9 & 4 & 5 & 8 & 1 \\
+    4 & 3 & 2 & 9 & 4
+  \end{pmatrix}
+\end{equation*}
+Answer: 3 x 5
+
+Systems written as matrices can be solved just as if they were written as systems.
+\subsection{Example 4}
+Solve
+\begin{equation*}
+  \systeme{ % x = 1, y = 3
+    x + y = 4,
+   -x + y = 2
+  }
+\end{equation*}
+Answer: This can be written as a matrix and solved using Gauss's Method.
+\begin{equation*}
+  \begin{pmatrix}
+     1 & 1 & 4 \\
+    -1 & 1 & 2
+  \end{pmatrix}
+  \xrightarrow{\rho_2 = \rho_2 + \rho_1}
+  \begin{pmatrix}
+     1 & 1 & 4 \\
+     0 & 2 & 6
+  \end{pmatrix}
+  \xrightarrow{\rho_2 = \rho_2/2}
+  \begin{pmatrix}
+     1 & 1 & 4 \\
+     0 & 1 & 3
+  \end{pmatrix}
+  \xrightarrow{\rho_1 = \rho_1 - \rho_2}
+  \begin{pmatrix}
+     1 & 0 & 1 \\
+     0 & 1 & 3
+  \end{pmatrix}
+\end{equation*}
+Then we can convert this back into system notation to determine that $x=1$ and $y=3$.
+
+Sometimes we'll want to be able to refer to specific elements in a matrix.
+We do this by using two subscripts: the first denoting the row, the seconds denoting the column.
+\subsection{Example 5}
+Let $A = \begin{pmatrix} 5 & 8 \\ 14 & 9 \end{pmatrix}$.
+Then $a_{1,1} = 5, a_{1,2} = 8, a_{2,1} = 14, \textrm{and } a_{2,2} = 9$.
+
+\subsection{Exercises}
+\subsubsection{Exercise 1}
+Solve the following matrix: $\begin{pmatrix} 1 & 2 & 1 \\ -1 & 2 & 5\end{pmatrix}$. %x = -2, y = 3
+
+\subsubsection{Exercise 2}
+Describe the size of the matrix $\begin{pmatrix} 3 \\ 5 \\ 8 \end{pmatrix}$.
+
+\subsubsection{Exercise 3}
+What is element $b_{2,3}$ in $B = \begin{pmatrix}4 & 3 & 19 & 2 \\ 5 & -1 & -4 & 9\end{pmatrix}?$
+
+
+
+\section{Solving Systems With More Then Three Variables}
+% \section{Solving Systems With More Then One Solution}
+% \section{Solving Systems With No Solutions}
+
 \end{document}
